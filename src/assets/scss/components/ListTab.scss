@@ -1,0 +1,65 @@
+$defaultWidthScreen : 1920;
+$list-tab-attributes : (
+    btn-home-width : calc(68 / $defaultWidthScreen) * 100vw,
+    btn-home-height : calc(36 / $defaultWidthScreen) * 100vw,
+    btn-home-padding : calc(7.5 / $defaultWidthScreen) * 100vw calc(21.83 / $defaultWidthScreen) * 100vw calc(8.67 / $defaultWidthScreen) * 100vw calc(22.83 / $defaultWidthScreen) * 100vw,
+    btn-home-icon-width : calc(23.33 / $defaultWidthScreen) * 100vw,
+    btn-home-icon-height : calc(19.83 / $defaultWidthScreen) * 100vw,
+    btn-home-icon-padding : calc(7.5 / $defaultWidthScreen) * 100vw calc(21.83 / $defaultWidthScreen) * 100vw calc(8.67 / $defaultWidthScreen) * 100vw calc(22.83 / $defaultWidthScreen) * 100vw,
+    tab-item-padding : calc(10 / $defaultWidthScreen) * 100vw calc(11.27 / $defaultWidthScreen) * 100vw calc(10 / $defaultWidthScreen) * 100vw calc(11.27 / $defaultWidthScreen) * 100vw,
+    tab-item-gap : calc(8 / $defaultWidthScreen) * 100vw,
+    tab-item-width : calc(86 / $defaultWidthScreen) * 100vw,
+    tab-item-height : calc(36 / $defaultWidthScreen) * 100vw,
+);
+.list-tab
+{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    background-color: gold;
+    .tab-home
+    {
+        width: map-get($map : $list-tab-attributes, $key : btn-home-width);
+        height: map-get($map : $list-tab-attributes, $key : btn-home-height);
+        background-color: #909DAD;
+        outline: 0;
+        border: 0;
+        padding: map-get($map : $list-tab-attributes, $key : btn-home-padding);
+        position: relative;
+        svg{
+            width: map-get($map : $list-tab-attributes, $key : btn-home-icon-width);
+            height: map-get($map : $list-tab-attributes, $key : btn-home-icon-height);
+            position: absolute;
+            transform: translate(-50%, -50%);
+        }
+        cursor: pointer;
+    }
+    .tab-item
+    {
+        padding: map-get($map : $list-tab-attributes, $key : tab-item-padding);
+        gap: map-get($map : $list-tab-attributes, $key : tab-item-gap);
+        width: map-get($map : $list-tab-attributes, $key : tab-item-width);
+        height: map-get($map : $list-tab-attributes, $key : tab-item-height);
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        .tab-name
+        {
+            font-size: 13px;
+        }
+        &.tab-item-active
+        {
+            background-color: aqua;
+            cursor: pointer;
+            color : #fff;
+        }
+        .btn-close
+        {
+            outline: 0 ;
+            border: 0;
+            background-color: transparent;
+        }
+    }
+}

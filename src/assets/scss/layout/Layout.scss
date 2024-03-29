@@ -1,0 +1,8 @@
+$defaultWidthScreen : 1920;
+$layout-attributes : (
+    layout-attributes-margin : 0 calc(152 / $defaultWidthScreen) * 100vw 0 calc(150 / $defaultWidthScreen) * 100vw
+);
+.layout-web
+{
+    margin : map-get($map : $layout-attributes, $key : layout-attributes-margin);
+}
